@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Material Converter</title>
+  <meta name="description" content="Upload notes, PDFs, images or URLs and get exam-ready material instantly. Free. No login." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+    .container {
+      max-width: 720px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #555;
+      line-height: 1.5;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-top: 30px;
+    }
+    .upload {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .upload:hover {
+      border-color: #000;
+    }
+    input[type="file"], input[type="url"] {
+      margin-top: 15px;
+      width: 100%;
+    }
+    button {
+      margin-top: 20px;
+      padding: 14px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .note {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #777;
+    }
+    .loading, .result {
+      display: none;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Upload your notes. Get exam‑ready material.</h1>
+    <p>Works with PDFs, scanned pages, images, Word files, and URLs. Completely free. No login.</p>
+
+    <div class="card">
+      <div class="upload">
+        <strong>Upload file</strong>
+        <input type="file" />
+        <p class="note">PDF · Word · Images · Scanned PDFs</p>
+      </div>
+
+      <p style="text-align:center; margin:15px 0;">OR</p>
+
+      <input type="url" placeholder="Paste a website or article URL here" />
+
+      <button onclick="startProcess()">Convert to Exam Material</button>
+
+      <div class="loading" id="loading">
+        <p>Reading your material…</p>
+        <p>Preparing exam content…</p>
+      </div>
+
+      <div class="result" id="result">
+        <p><strong>Your exam material is ready:</strong></p>
+        <ul>
+          <li>✔ Exam Notes</li>
+          <li>✔ Key Points</li>
+          <li>✔ Important Q&A</li>
+          <li>✔ MCQs</li>
+          <li>✔ Summary</li>
+        </ul>
+        <button>Download PDF</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>No signup · Free forever · Files auto‑deleted</p>
+    </footer>
+  </div>
+
+  <script>
+    function startProcess() {
+      document.getElementById('loading').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
