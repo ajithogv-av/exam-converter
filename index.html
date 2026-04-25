@@ -38,15 +38,25 @@ font-size:15px;
 
 nav{
 border-top:1px solid #eee;
-padding-top:12px;
+padding-top:14px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:0;
 }
 
 nav a{
-margin:0 14px;
 color:#1565d8;
 text-decoration:none;
 font-weight:600;
-font-size:15px;
+font-size:14px;
+padding:6px 12px;
+border-right:1px solid #d9d9d9;
+line-height:1;
+}
+
+nav a:last-child{
+border-right:none;
 }
 
 nav a:hover{
@@ -111,10 +121,14 @@ ul{
 padding-left:20px;
 }
 
-@media (max-width:600px){
+@media (max-width:700px){
+nav{
+gap:6px;
+}
 nav a{
-display:inline-block;
-margin:6px 8px;
+border-right:none;
+border:1px solid #e4e4e4;
+border-radius:6px;
 }
 header h1{
 font-size:28px;
@@ -131,7 +145,11 @@ font-size:28px;
 
 <nav>
 <a href="index.html">Home</a>
-<a href="how-to-study.html">Study Guides</a>
+<a href="how-to-study.html">How to Study</a>
+<a href="last-minute-revision.html">Revision Tips</a>
+<a href="study-notes-guide.html">Notes Guide</a>
+<a href="time-management-for-exams.html">Time Tips</a>
+<a href="competitive-exam-preparation.html">Competitive Exams</a>
 <a href="about.html">About</a>
 <a href="privacy.html">Privacy</a>
 <a href="disclaimer.html">Disclaimer</a>
