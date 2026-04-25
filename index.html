@@ -1,165 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7051642646644532"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exam Material Converter</title>
-  <meta name="description" content="Upload notes, PDFs, images or URLs and get exam-ready material instantly. Free. No login." />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-    }
-    .container {
-      max-width: 720px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #555;
-      line-height: 1.5;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      margin-top: 30px;
-    }
-    .upload {
-      border: 2px dashed #ccc;
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-      cursor: pointer;
-    }
-    .upload:hover {
-      border-color: #000;
-    }
-    input[type="file"], input[type="url"] {
-      margin-top: 15px;
-      width: 100%;
-    }
-    button {
-      margin-top: 20px;
-      padding: 14px 22px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      opacity: 0.9;
-    }
-    .note {
-      font-size: 14px;
-      margin-top: 10px;
-      color: #777;
-    }
-    .loading, .result {
-      display: none;
-      margin-top: 20px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Converter | Free Study Notes Tool</title>
+<meta name="description" content="Convert PDFs, Word files, images and notes into exam-ready study material for free.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7051642646644532"
+crossorigin="anonymous"></script>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f7fb;
+color:#222;
+}
+header{
+background:#ffffff;
+padding:20px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+header h1{
+margin:0;
+font-size:32px;
+color:#1565d8;
+}
+header p{
+margin-top:8px;
+color:#555;
+}
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+.card{
+background:#fff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
+margin-bottom:25px;
+}
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+}
+button{
+background:#1565d8;
+color:#fff;
+border:none;
+padding:14px 20px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+button:hover{
+background:#0d4fb5;
+}
+h2{
+margin-top:0;
+color:#1565d8;
+}
+a{
+color:#1565d8;
+text-decoration:none;
+}
+a:hover{
+text-decoration:underline;
+}
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#555;
+}
+.resource a{
+display:block;
+margin:12px 0;
+font-size:18px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Upload your notes. Get exam‑ready material.</h1>
-    <p>Works with PDFs, scanned pages, images, Word files, and URLs. Completely free. No login.</p>
+<header>
+<h1>Exam Converter</h1>
+<p>Convert study material into exam-ready notes, summaries and questions for free.</p>
+</header>
 
-    <div class="card">
-      <div class="upload">
-        <strong>Upload file</strong>
-        <input type="file" />
-        <p class="note">PDF · Word · Images · Scanned PDFs</p>
-      </div>
+<div class="container">
 
-      <p style="text-align:center; margin:15px 0;">OR</p>
+<div class="card">
+<h2>Upload Study Material</h2>
 
-      <input type="url" placeholder="Paste a website or article URL here" />
+<input type="file">
 
-      <button onclick="startProcess()">Convert to Exam Material</button>
-<div style="margin-top:40px;">
-  <h2>Frequently Asked Questions</h2>
+<p style="text-align:center;">OR</p>
 
-  <p><strong>What does this website do?</strong><br>
-  This tool converts study material such as PDFs, Word files, scanned pages, images, or URLs into exam-ready notes, key points, and questions.</p>
+<input type="url" placeholder="Paste website or article URL here">
 
-  <p><strong>Is this service really free?</strong><br>
-  Yes. This website is completely free to use and does not require any signup or payment.</p>
+<button>Convert to Exam Material</button>
 
-  <p><strong>Are my files safe?</strong><br>
-  Yes. Uploaded files are processed temporarily and are automatically deleted. We do not store user content.</p>
+<p style="margin-top:15px;color:#666;">PDF • Word • Images • Scanned PDFs</p>
 </div>
 
-      <div class="loading" id="loading">
-        <p>Reading your material…</p>
-        <p>Preparing exam content…</p>
-      </div>
-
-      <div class="result" id="result">
-        <p><strong>Your exam material is ready:</strong></p>
-        <ul>
-          <li>✔ Exam Notes</li>
-          <li>✔ Key Points</li>
-          <li>✔ Important Q&A</li>
-          <li>✔ MCQs</li>
-          <li>✔ Summary</li>
-        </ul>
-        <button>Download PDF</button>
-      </div>
-    </div>
-<div style="margin-top:40px;">
-  <h2>Study Resources</h2>
-
-  <p><a href="how-to-study.html">How to Study Effectively for Exams</a></p>
-
-  <p><a href="last-minute-revision.html">Last Minute Revision Tips</a></p>
-
-  <p><a href="study-notes-guide.html">How to Make Effective Study Notes</a></p>
-
-  <p><a href="time-management-for-exams.html">Time Management Tips for Exams</a></p>
-
-  <p><a href="competitive-exam-preparation.html">How to Prepare for Competitive Exams</a></p>
+<div class="card">
+<h2>Why Students Use Exam Converter</h2>
+<p>Save time by turning long material into short notes, key points, and revision-friendly content.</p>
+<p>Useful for school exams, college tests and competitive exams.</p>
 </div>
-    <footer>
-  <p>No signup · Free forever · Files auto-deleted</p>
-  <p>
-    <a href="about.html">About</a> ·
-    <a href="privacy.html">Privacy Policy</a> ·
-    <a href="disclaimer.html">Disclaimer</a>
-  </p>
+
+<div class="card">
+<h2>Frequently Asked Questions</h2>
+
+<p><strong>Is it free?</strong><br>Yes, completely free to use.</p>
+
+<p><strong>Do I need to sign up?</strong><br>No signup required.</p>
+
+<p><strong>Are files stored?</strong><br>No. Files are processed temporarily and auto-deleted.</p>
+</div>
+
+<div class="card resource">
+<h2>Study Resources</h2>
+
+<a href="how-to-study.html">How to Study Effectively for Exams</a>
+
+<a href="last-minute-revision.html">Last Minute Revision Tips</a>
+
+<a href="study-notes-guide.html">How to Make Effective Study Notes</a>
+
+<a href="time-management-for-exams.html">Time Management Tips for Exams</a>
+
+<a href="competitive-exam-preparation.html">How to Prepare for Competitive Exams</a>
+
+</div>
+
+</div>
+
+<footer>
+<p>No signup · Free forever · Files auto-deleted</p>
+<p>
+<a href="about.html">About</a> ·
+<a href="privacy.html">Privacy Policy</a> ·
+<a href="disclaimer.html">Disclaimer</a>
+</p>
 </footer>
-
-  </div>
-
-  <script>
-    function startProcess() {
-      document.getElementById('loading').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('result').style.display = 'block';
-      }, 2500);
-    }
-  </script>
 
 </body>
 </html>
